@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YAATAL Design - Services</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <script>
+       tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#02566b", secondary: "#f59e0b" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+      }
+      .app-header {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 60;
+      }
+      .mobile-tabs {
+        position: fixed !important;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 60;
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+      .with-mobile-tabs {
+        padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+      }
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      .hero-bg {
+        background-image: url("https://readdy.ai/api/search-image?query=modern%20creative%20design%20studio%20workspace%20with%20clean%20white%20background%2C%20minimalist%20aesthetic%2C%20soft%20natural%20lighting%2C%20professional%20creative%20environment%2C%20contemporary%20office%20space%2C%20clean%20and%20organized%2C%20high-end%20design%20studio%20atmosphere%2C%20neutral%20tones%2C%20sophisticated%20workspace&width=1920&height=800&seq=hero001&orientation=landscape");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      @media (max-width: 767px), (min-width: 1024px) {
+        #tablet-menu {
+          display: none !important;
+        }
+      }
+      @media (min-width: 768px) {
+        .with-mobile-tabs {
+          padding-bottom: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="with-mobile-tabs bg-white overflow-x-hidden pt-20 md:pt-24">
+    <!-- Header -->
+    <header class="app-header bg-white shadow-sm">
+      <div class="w-full px-4 sm:px-6 lg:px-8">
+        <div
+          class="hidden lg:grid lg:grid-cols-[1fr_auto_1fr] items-center py-4 gap-4"
+        >
+          <div class="flex items-center justify-self-start">
+            <img src="img/Logo.png" alt="YAATAL Digital" class="h-10 w-auto" />
+          </div>
+          <nav class="flex items-center justify-center gap-8">
+            <a href="index.html" class="text-gray-600 hover:text-primary transition-colors"
+              >Accueil</a
+            >
+            <a href="services.html" class="text-primary hover:text-primary transition-colors"
+              >Services</a
+            >
+            <a href="portfolio.html" class="text-gray-600 hover:text-primary transition-colors"
+              >Portfolio</a
+            >
+            <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors"
+              >Contact</a
+            >
+          </nav>
+          <div class="justify-self-end">
+            <a
+              href="contact.html"
+              class="inline-block bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+            >
+              Demandez un devis
+            </a>
+          </div>
+        </div>
+        <div class="flex md:hidden justify-center items-center py-4">
+          <div class="flex items-center">
+            <img src="img/Logo.png" alt="YAATAL Digital" class="h-10 w-auto" />
+          </div>
+        </div>
+        <div class="hidden md:flex lg:hidden justify-between items-center py-4">
+          <div class="flex items-center">
+            <img src="img/Logo.png" alt="YAATAL Digital" class="h-10 w-auto" />
+          </div>
+          <button
+            id="tablet-menu-toggle"
+            class="w-10 h-10 flex items-center justify-center rounded border border-gray-200 text-gray-700"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+          >
+            <i class="ri-menu-line text-xl"></i>
+          </button>
+        </div>
+        <div id="tablet-menu" class="hidden border-t border-gray-100 pb-4">
+          <nav class="flex flex-col pt-4 space-y-3">
+            <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Accueil</a>
+            <a href="services.html" class="text-primary hover:text-primary transition-colors">Services</a>
+            <a href="portfolio.html" class="text-gray-600 hover:text-primary transition-colors">Portfolio</a>
+            <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+          </nav>
+          <a
+            href="contact.html"
+            class="mt-4 w-full inline-block text-center bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors"
+          >
+            Demandez un devis
+          </a>
+        </div>
+      </div>
+    </header>
+    <nav
+      class="mobile-tabs md:hidden bg-white border-t border-gray-200 shadow-[0_-4px_14px_rgba(0,0,0,0.08)]"
+    >
+      <div class="grid grid-cols-4 w-full">
+        <a
+          href="index.html"
+          class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-primary transition-colors"
+        >
+          <i class="ri-home-5-line text-lg"></i>
+          <span class="text-[11px] font-medium">Accueil</span>
+        </a>
+        <a
+          href="services.html"
+          class="flex flex-col items-center justify-center py-2 text-primary"
+        >
+          <i class="ri-briefcase-4-line text-lg"></i>
+          <span class="text-[11px] font-medium">Services</span>
+        </a>
+        <a
+          href="portfolio.html"
+          class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-primary transition-colors"
+        >
+          <i class="ri-layout-grid-line text-lg"></i>
+          <span class="text-[11px] font-medium">Portfolio</span>
+        </a>
+        <a
+          href="contact.html"
+          class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-primary transition-colors"
+        >
+          <i class="ri-customer-service-2-line text-lg"></i>
+          <span class="text-[11px] font-medium">Contact</span>
+        </a>
+      </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero-bg relative min-h-[600px] flex items-center">
+      <div class="absolute inset-0 bg-white/80"></div>
+      <div class="relative w-full max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl">
+          <h2 class="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Notre
+            <span class="text-teal-600 border-b-4 border-orange-400"
+              >Expertises</span
+            >
+          </h2>
+          <p class="text-xl text-gray-600 leading-relaxed">
+            Une approche holistique combinant créativité, technologie et
+            stratégie pour propulser votre entreprise vers de nouveaux horizons
+            numériques.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-12">
+          <!-- Design Numérique -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="ri-palette-line text-blue-600 text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Design Numérique
+            </h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Création d'expériences utilisateur d'interfaces centrées
+              utilisateur optimisées par l'intelligence artificielle pour un
+              impact maximal.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                <span class="text-gray-700">Branding & Identité</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                <span class="text-gray-700">UI/UX Design</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                <span class="text-gray-700">Génération d'idées par IA</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                <span class="text-gray-700">Design System</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Développement Web -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-teal-100 rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="ri-code-s-slash-line text-teal-600 text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Développement web
+            </h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Conception de solutions robustes, évolutives et sécurisées. Du
+              site vitrine aux applications complexes, nous codons votre succès.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                <span class="text-gray-700">Branding & Identité</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                <span class="text-gray-700">UI/UX Design</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                <span class="text-gray-700">Génération d'idées par IA</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                <span class="text-gray-700">Design System</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Stratégie Digitale -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="ri-line-chart-line text-orange-600 text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Stratégie Digitale
+            </h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Accompagnement complet dans votre transformation numérique. Nous
+              définissons la feuille de route pour atteindre vos objectifs.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                <span class="text-gray-700">Branding & Identité</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                <span class="text-gray-700">UI/UX Design</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                <span class="text-gray-700">Génération d'idées par IA</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                <span class="text-gray-700">Design System</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-teal-600">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center justify-between">
+          <div class="lg:w-2/3 mb-8 lg:mb-0">
+            <h3 class="text-3xl font-bold text-white mb-4">
+              Vous êtes une entreprise, une organisation ou un entrepreneur ou
+              encore une institution ?
+            </h3>
+            <p class="text-teal-100 text-lg">
+              Yaatal groupe est votre partenaire idéal pour tous vos solutions
+              numérique sur mesure
+            </p>
+          </div>
+          <div class="flex space-x-4">
+            <button
+              class="bg-orange-500 text-white px-8 py-4 !rounded-button hover:bg-orange-600 transition-colors whitespace-nowrap"
+            >
+              Nous contacter
+            </button>
+            <button
+              class="bg-transparent border-2 border-white text-white px-8 py-4 !rounded-button hover:bg-white hover:text-teal-600 transition-colors whitespace-nowrap"
+            >
+              Demander un devis
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            Notre
+            <span class="text-teal-600 border-b-4 border-orange-400"
+              >processus</span
+            >
+          </h2>
+          <p class="text-xl text-gray-600">
+            Une méthodologie agile pour des résultats concrets.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8">
+          <!-- Step 1 -->
+          <div class="text-center">
+            <div
+              class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="ri-file-text-line text-blue-600 text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-bold text-gray-900 mb-3">
+              Brief et cadrage
+            </h4>
+            <p class="text-gray-600">
+              Nous analysons vos besoins, définissons la stratégie et les
+              objectifs du projet.
+            </p>
+            <div
+              class="hidden md:block w-full h-1 bg-gradient-to-r from-blue-500 to-orange-500 mt-8"
+            ></div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="text-center">
+            <div
+              class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="ri-pencil-ruler-2-line text-orange-600 text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-bold text-gray-900 mb-3">
+              Conception UI/UX
+            </h4>
+            <p class="text-gray-600">
+              Création des parcours utilisateurs et des maquettes graphiques
+              haute fidélité.
+            </p>
+            <div
+              class="hidden md:block w-full h-1 bg-gradient-to-r from-orange-500 to-teal-500 mt-8"
+            ></div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="text-center">
+            <div
+              class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="ri-code-line text-red-600 text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-bold text-gray-900 mb-3">Développement</h4>
+            <p class="text-gray-600">
+              Intégration technique robuste, tests et optimisation des
+              performances.
+            </p>
+            <div
+              class="hidden md:block w-full h-1 bg-gradient-to-r from-red-500 to-green-500 mt-8"
+            ></div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="text-center">
+            <div
+              class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="ri-rocket-line text-green-600 text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-bold text-gray-900 mb-3">Lancement</h4>
+            <p class="text-gray-600">
+              Mise en ligne, formation des équipes et suivi post-lancement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-teal-700 text-white py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-12">
+          <!-- Logo & Description -->
+          <div>
+            <div class="flex items-center space-x-3 mb-6">
+              <div
+                class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center"
+              >
+                <i class="ri-plant-line text-white text-xl"></i>
+              </div>
+              <div>
+                <h1 class="font-['Pacifico'] text-2xl text-white">YAATAL</h1>
+                <p class="text-sm text-orange-300 font-medium -mt-1">Design</p>
+              </div>
+            </div>
+            <p class="text-teal-100 leading-relaxed">
+              Yaatal Design, votre agence créative spécialisée en UI/UX design,
+              design graphique et branding.
+            </p>
+          </div>
+
+          <!-- Lien Rapide -->
+          <div>
+            <h4 class="text-xl font-bold mb-6">Lien Rapide</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-teal-100 hover:text-white transition-colors"
+                  >Accueil</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-teal-100 hover:text-white transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-teal-100 hover:text-white transition-colors"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-teal-100 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4 class="text-xl font-bold mb-6">Contact</h4>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-3">
+                <i class="ri-map-pin-line text-orange-400"></i>
+                <span class="text-teal-100">Dakar, Sénégal</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="ri-mail-line text-orange-400"></i>
+                <span class="text-teal-100">yaataldesign@gmail.com</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="ri-phone-line text-orange-400"></i>
+                <span class="text-teal-100">+221 76 932 60 09</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div>
+            <h4 class="text-xl font-bold mb-6">Newsletter</h4>
+            <p class="text-teal-100 mb-4">
+              Restez informé de nos dernières innovations.
+            </p>
+            <div class="space-y-3">
+              <input
+                type="email"
+                placeholder="votre email"
+                class="w-full px-4 py-3 rounded-lg bg-teal-600 border border-teal-500 text-white placeholder-teal-200 focus:outline-none focus:border-orange-400"
+              />
+              <button
+                class="w-full bg-orange-500 text-white px-6 py-3 !rounded-button hover:bg-orange-600 transition-colors whitespace-nowrap flex items-center justify-center space-x-2"
+              >
+                <span>S'inscrire</span>
+                <i class="ri-arrow-right-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div
+          class="border-t border-teal-600 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between"
+        >
+          <p class="text-teal-200 mb-4 md:mb-0">
+            Copyright © 2025 Yaatal Design | Tous droits réservés
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="#"
+              class="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors"
+            >
+              <i class="ri-facebook-fill text-white"></i>
+            </a>
+            <a
+              href="#"
+              class="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors"
+            >
+              <i class="ri-linkedin-fill text-white"></i>
+            </a>
+            <a
+              href="#"
+              class="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors"
+            >
+              <i class="ri-instagram-fill text-white"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const tabletMenuToggle = document.getElementById("tablet-menu-toggle");
+      const tabletMenu = document.getElementById("tablet-menu");
+
+      tabletMenuToggle?.addEventListener("click", () => {
+        const isOpen = !tabletMenu.classList.contains("hidden");
+        tabletMenu.classList.toggle("hidden");
+        tabletMenuToggle.setAttribute("aria-expanded", String(!isOpen));
+      });
+    </script>
+  </body>
+</html>

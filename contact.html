@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - YAATAL Design</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#02566b", secondary: "#f59e0b" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+      }
+      .app-header {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 60;
+      }
+      .mobile-tabs {
+        position: fixed !important;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 60;
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+      .with-mobile-tabs {
+        padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+      }
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      @media (max-width: 767px), (min-width: 1024px) {
+        #tablet-menu {
+          display: none !important;
+        }
+      }
+      @media (min-width: 768px) {
+        .with-mobile-tabs {
+          padding-bottom: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="with-mobile-tabs bg-gray-50 overflow-x-hidden min-h-screen pt-20 md:pt-24">
+    <!-- Header -->
+    <header class="app-header bg-white shadow-sm">
+      <div class="w-full px-4 sm:px-6 lg:px-8">
+        <div
+          class="hidden lg:grid lg:grid-cols-[1fr_auto_1fr] items-center py-4 gap-4"
+        >
+          <div class="flex items-center justify-self-start">
+            <img src="img/Logo.png" alt="YAATAL Digital" class="h-10 w-auto" />
+          </div>
+          <nav class="flex items-center justify-center gap-8">
+            <a href="index.html" class="text-gray-600 hover:text-primary transition-colors"
+              >Accueil</a
+            >
+            <a href="services.html" class="text-gray-600 hover:text-primary transition-colors"
+              >Services</a
+            >
+            <a href="portfolio.html" class="text-gray-600 hover:text-primary transition-colors"
+              >Portfolio</a
+            >
+            <a href="contact.html" class="text-primary hover:text-primary transition-colors"
+              >Contact</a
+            >
+          </nav>
+          <div class="justify-self-end">
+            <a
+              href="contact.html"
+              class="inline-block bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+            >
+              Demandez un devis
+            </a>
+          </div>
+        </div>
+        <div class="flex md:hidden justify-center items-center py-4">
+          <div class="flex items-center">
+            <img src="img/Logo.png" alt="YAATAL Digital" class="h-10 w-auto" />
+          </div>
+        </div>
+        <div class="hidden md:flex lg:hidden justify-between items-center py-4">
+          <div class="flex items-center">
+            <img src="img/Logo.png" alt="YAATAL Digital" class="h-10 w-auto" />
+          </div>
+          <button
+            id="tablet-menu-toggle"
+            class="w-10 h-10 flex items-center justify-center rounded border border-gray-200 text-gray-700"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+          >
+            <i class="ri-menu-line text-xl"></i>
+          </button>
+        </div>
+        <div id="tablet-menu" class="hidden border-t border-gray-100 pb-4">
+          <nav class="flex flex-col pt-4 space-y-3">
+            <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Accueil</a>
+            <a href="services.html" class="text-gray-600 hover:text-primary transition-colors">Services</a>
+            <a href="portfolio.html" class="text-gray-600 hover:text-primary transition-colors">Portfolio</a>
+            <a href="contact.html" class="text-primary hover:text-primary transition-colors">Contact</a>
+          </nav>
+          <a
+            href="contact.html"
+            class="mt-4 w-full inline-block text-center bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors"
+          >
+            Demandez un devis
+          </a>
+        </div>
+      </div>
+    </header>
+    <nav
+      class="mobile-tabs md:hidden bg-white border-t border-gray-200 shadow-[0_-4px_14px_rgba(0,0,0,0.08)]"
+    >
+      <div class="grid grid-cols-4 w-full">
+        <a
+          href="index.html"
+          class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-primary transition-colors"
+        >
+          <i class="ri-home-5-line text-lg"></i>
+          <span class="text-[11px] font-medium">Accueil</span>
+        </a>
+        <a
+          href="services.html"
+          class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-primary transition-colors"
+        >
+          <i class="ri-briefcase-4-line text-lg"></i>
+          <span class="text-[11px] font-medium">Services</span>
+        </a>
+        <a
+          href="portfolio.html"
+          class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-primary transition-colors"
+        >
+          <i class="ri-layout-grid-line text-lg"></i>
+          <span class="text-[11px] font-medium">Portfolio</span>
+        </a>
+        <a
+          href="contact.html"
+          class="flex flex-col items-center justify-center py-2 text-primary"
+        >
+          <i class="ri-customer-service-2-line text-lg"></i>
+          <span class="text-[11px] font-medium">Contact</span>
+        </a>
+      </div>
+    </nav>
+
+    <main class="py-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h1 class="text-4xl font-bold text-gray-900 mb-4">Nous contacter</h1>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Notre équipe est là pour répondre à vos questions et vous
+            accompagner. N'hésitez pas à nous écrire !
+          </p>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-12">
+          <div class="lg:col-span-2">
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+              <h2 class="text-2xl font-bold text-gray-900 mb-6">
+                Formulaire de contact
+              </h2>
+              <form class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                      Prénom <span class="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Saisir"
+                      class="w-full px-4 py-3 border border-gray-200 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                      Nom <span class="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Saisir"
+                      class="w-full px-4 py-3 border border-gray-200 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                    />
+                  </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                      Téléphone <span class="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="Saisir"
+                      class="w-full px-4 py-3 border border-gray-200 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2"
+                      >Email</label
+                    >
+                    <input
+                      type="email"
+                      placeholder="Saisir"
+                      class="w-full px-4 py-3 border border-gray-200 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Message</label
+                  >
+                  <textarea
+                    rows="6"
+                    placeholder="Votre texte"
+                    class="w-full px-4 py-3 border border-gray-200 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent resize-none text-sm"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="bg-secondary text-white px-8 py-3 !rounded-button hover:bg-opacity-90 transition-colors font-medium whitespace-nowrap"
+                >
+                  Envoyer
+                </button>
+              </form>
+            </div>
+          </div>
+          <div>
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+              <h2 class="text-2xl font-bold text-gray-900 mb-6">
+                Nos coordonnées
+              </h2>
+              <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="w-6 h-6 flex items-center justify-center text-secondary"
+                  >
+                    <i class="ri-phone-line"></i>
+                  </div>
+                  <div>
+                    <p class="text-gray-900 font-medium">
+                      +221 78 932 60 09 / 78 120 53 74
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="w-6 h-6 flex items-center justify-center text-secondary"
+                  >
+                    <i class="ri-mail-line"></i>
+                  </div>
+                  <div>
+                    <p class="text-gray-900 font-medium">
+                      yaataldesign@gmail.com
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="w-6 h-6 flex items-center justify-center text-secondary"
+                  >
+                    <i class="ri-map-pin-line"></i>
+                  </div>
+                  <div>
+                    <p class="text-gray-900 font-medium">Dakar, Sénégal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-primary text-white py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center space-x-2 mb-6">
+              <div
+                class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center"
+              >
+                <i class="ri-leaf-line text-white text-xl"></i>
+              </div>
+              <div>
+                <div class="font-['Pacifico'] text-white text-xl">YAATAL</div>
+                <div class="text-secondary text-sm font-medium">Design</div>
+              </div>
+            </div>
+            <p class="text-gray-300 leading-relaxed">
+              Yaatal Design, votre agence créative spécialisée en UI/UX design,
+              design graphique et branding.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Lien Rapide</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Accueil</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Contact</h3>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-secondary"
+                >
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span class="text-gray-300">Dakar, Sénégal</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-secondary"
+                >
+                  <i class="ri-mail-line"></i>
+                </div>
+                <span class="text-gray-300">yaataldesign@gmail.com</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-secondary"
+                >
+                  <i class="ri-phone-line"></i>
+                </div>
+                <span class="text-gray-300">+221 78 932 60 09</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Newsletter</h3>
+            <p class="text-gray-300 mb-4">
+              Restez informé de nos dernières innovations.
+            </p>
+            <div class="flex">
+              <input
+                type="email"
+                placeholder="Votre email"
+                class="flex-1 px-4 py-3 bg-white/10 border border-white/20 !rounded-button text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent text-sm"
+              />
+              <button
+                class="bg-secondary text-white px-6 py-3 !rounded-button ml-2 hover:bg-opacity-90 transition-colors flex items-center space-x-2 whitespace-nowrap"
+              >
+                <span>S'inscrire</span>
+                <i class="ri-arrow-right-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-300 text-sm">
+            Copyright © 2025 Yaatal Design | Tous droits réservés
+          </p>
+          <div class="flex space-x-4 mt-4 md:mt-0">
+            <a
+              href="#"
+              class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+            >
+              <i class="ri-facebook-fill"></i>
+            </a>
+            <a
+              href="#"
+              class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+            >
+              <i class="ri-linkedin-fill"></i>
+            </a>
+            <a
+              href="#"
+              class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+            >
+              <i class="ri-instagram-fill"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const tabletMenuToggle = document.getElementById("tablet-menu-toggle");
+      const tabletMenu = document.getElementById("tablet-menu");
+
+      tabletMenuToggle?.addEventListener("click", () => {
+        const isOpen = !tabletMenu.classList.contains("hidden");
+        tabletMenu.classList.toggle("hidden");
+        tabletMenuToggle.setAttribute("aria-expanded", String(!isOpen));
+      });
+    </script>
+  </body>
+</html>

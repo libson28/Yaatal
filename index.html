@@ -9,7 +9,7 @@
       tailwind.config = {
         theme: {
           extend: {
-            colors: { primary: "#0891b2", secondary: "#f59e0b" },
+            colors: { primary: "#02566b", secondary: "#f59e0b" },
             borderRadius: {
               none: "0px",
               sm: "4px",
@@ -84,72 +84,43 @@
     <!-- Header -->
     <header class="app-header bg-white shadow-sm">
       <div class="w-full px-4 sm:px-6 lg:px-8">
-        <div class="hidden lg:flex justify-between items-center py-4 gap-4">
-          <div class="flex items-center">
-            <div
-              class="w-8 h-8 bg-primary rounded flex items-center justify-center mr-2"
-            >
-              <span class="text-white text-sm font-bold">Y</span>
-            </div>
-            <div>
-              <div class="font-['Pacifico'] text-xl text-gray-900">YAATAL-</div>
-              <div class="text-xs text-gray-600 -mt-1">Digital</div>
-            </div>
+        <div
+          class="hidden lg:grid lg:grid-cols-[1fr_auto_1fr] items-center py-4 gap-4"
+        >
+          <div class="flex items-center justify-self-start">
+            <img src="img/Logo.png" alt="YAATAL Digital" class="h-10 w-auto" />
           </div>
-          <div class="hidden md:flex items-center gap-8">
-            <nav class="flex space-x-8">
-              <a
-                href="#"
-                class="text-gray-900 hover:text-primary transition-colors"
-                >Accueil</a
-              >
-              <a
-                href="#"
-                class="text-gray-600 hover:text-primary transition-colors"
-                >Services</a
-              >
-              <a
-                href="#"
-                class="text-gray-600 hover:text-primary transition-colors"
-                >Portfolio</a
-              >
-              <a
-                href="#"
-                class="text-gray-600 hover:text-primary transition-colors"
-                >Contact</a
-              >
-            </nav>
-            <button
-              class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+          <nav class="flex items-center justify-center gap-8">
+            <a href="index.html" class="text-primary hover:text-primary transition-colors"
+              >Accueil</a
+            >
+            <a href="services.html" class="text-gray-600 hover:text-primary transition-colors"
+              >Services</a
+            >
+            <a href="portfolio.html" class="text-gray-600 hover:text-primary transition-colors"
+              >Portfolio</a
+            >
+            <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors"
+              >Contact</a
+            >
+          </nav>
+          <div class="justify-self-end">
+            <a
+              href="contact.html"
+              class="inline-block bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
             >
               Demandez un devis
-            </button>
+            </a>
           </div>
         </div>
         <div class="flex md:hidden justify-center items-center py-4">
           <div class="flex items-center">
-            <div
-              class="w-8 h-8 bg-primary rounded flex items-center justify-center mr-2"
-            >
-              <span class="text-white text-sm font-bold">Y</span>
-            </div>
-            <div>
-              <div class="font-['Pacifico'] text-xl text-gray-900">YAATAL-</div>
-              <div class="text-xs text-gray-600 -mt-1">Digital</div>
-            </div>
+            <img src="img/Logo.png" alt="YAATAL Digital" class="h-10 w-auto" />
           </div>
         </div>
         <div class="hidden md:flex lg:hidden justify-between items-center py-4">
           <div class="flex items-center">
-            <div
-              class="w-8 h-8 bg-primary rounded flex items-center justify-center mr-2"
-            >
-              <span class="text-white text-sm font-bold">Y</span>
-            </div>
-            <div>
-              <div class="font-['Pacifico'] text-xl text-gray-900">YAATAL-</div>
-              <div class="text-xs text-gray-600 -mt-1">Digital</div>
-            </div>
+            <img src="img/Logo.png" alt="YAATAL Digital" class="h-10 w-auto" />
           </div>
           <button
             id="tablet-menu-toggle"
@@ -163,31 +134,32 @@
         <div id="tablet-menu" class="hidden border-t border-gray-100 pb-4">
           <nav class="flex flex-col pt-4 space-y-3">
             <a
-              href="#"
+              href="index.html"
               class="text-gray-900 hover:text-primary transition-colors"
               >Accueil</a
             >
             <a
-              href="#"
+              href="services.html"
               class="text-gray-600 hover:text-primary transition-colors"
               >Services</a
             >
             <a
-              href="#"
+              href="portfolio.html"
               class="text-gray-600 hover:text-primary transition-colors"
               >Portfolio</a
             >
             <a
-              href="#"
+              href="contact.html"
               class="text-gray-600 hover:text-primary transition-colors"
               >Contact</a
             >
           </nav>
-          <button
-            class="mt-4 w-full bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors"
+          <a
+            href="contact.html"
+            class="mt-4 w-full inline-block text-center bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors"
           >
             Demandez un devis
-          </button>
+          </a>
         </div>
       </div>
     </header>
@@ -196,28 +168,28 @@
     >
       <div class="grid grid-cols-4 w-full">
         <a
-          href="#"
+          href="index.html"
           class="flex flex-col items-center justify-center py-2 text-primary"
         >
           <i class="ri-home-5-line text-lg"></i>
           <span class="text-[11px] font-medium">Accueil</span>
         </a>
         <a
-          href="#"
+          href="services.html"
           class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-primary transition-colors"
         >
           <i class="ri-briefcase-4-line text-lg"></i>
           <span class="text-[11px] font-medium">Services</span>
         </a>
         <a
-          href="#"
+          href="portfolio.html"
           class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-primary transition-colors"
         >
           <i class="ri-layout-grid-line text-lg"></i>
           <span class="text-[11px] font-medium">Portfolio</span>
         </a>
         <a
-          href="#"
+          href="contact.html"
           class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-primary transition-colors"
         >
           <i class="ri-customer-service-2-line text-lg"></i>
@@ -228,19 +200,18 @@
 
     <!-- Hero Section -->
     <section
-      class="relative bg-gradient-to-br from-primary via-cyan-600 to-teal-700 text-white overflow-hidden min-h-[600px]"
+      class="relative text-white overflow-hidden min-h-[600px] flex items-center"
       style="
-        background-image: url(&quot;https://readdy.ai/api/search-image?query=Modern%20digital%20innovation%20workspace%20with%20geometric%20patterns%2C%20clean%20minimalist%20design%2C%20soft%20blue%20teal%20gradient%20background%2C%20professional%20technology%20environment%2C%20abstract%20geometric%20shapes%2C%20modern%20office%20space%20with%20computers%20and%20digital%20devices%2C%20bright%20lighting%2C%20contemporary%20design%20elements&width=1920&height=600&seq=hero1&orientation=landscape&quot;);
+        background-image: url('img/banner.png');
         background-size: cover;
         background-position: center;
+        margin-top: -25px;
       "
     >
-      <div
-        class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent"
-      ></div>
+      <div class="absolute inset-0 bg-primary/65"></div>
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="w-full">
-          <div class="max-w-2xl">
+        <div class="w-full flex justify-center">
+          <div class="max-w-3xl text-center mx-auto mt-[-10px]">
             <h1 class="text-5xl font-bold mb-6 leading-tight">
               L'innovation au service<br />
               <span class="text-secondary">de vos idées</span>
@@ -250,7 +221,7 @@
               innovantes. Notre expertise technique et notre vision stratégique
               donnent vie à vos projets.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
                 class="bg-secondary text-white px-8 py-3 !rounded-button hover:bg-secondary/90 transition-colors whitespace-nowrap font-semibold"
               >
@@ -289,41 +260,7 @@
             </p>
           </div>
           <div class="relative">
-            <div class="grid grid-cols-3 gap-4 items-center">
-              <div class="space-y-4">
-                <div class="w-3 h-3 bg-primary rounded-full"></div>
-                <div class="w-2 h-2 bg-secondary rounded-full"></div>
-                <div class="w-4 h-4 bg-cyan-400 rounded-full"></div>
-              </div>
-              <div class="text-center">
-                <div
-                  class="w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4"
-                >
-                  <i class="ri-lightbulb-line text-2xl text-secondary"></i>
-                </div>
-                <div
-                  class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4"
-                >
-                  <i class="ri-rocket-line text-xl text-primary"></i>
-                </div>
-              </div>
-              <div class="space-y-4 text-right">
-                <div class="w-2 h-2 bg-pink-400 rounded-full ml-auto"></div>
-                <div class="w-3 h-3 bg-green-400 rounded-full ml-auto"></div>
-                <div class="w-4 h-4 bg-purple-400 rounded-full ml-auto"></div>
-              </div>
-            </div>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <svg class="w-full h-full opacity-20" viewBox="0 0 200 200">
-                <path
-                  d="M20,100 Q100,20 180,100 Q100,180 20,100"
-                  stroke="#0891b2"
-                  stroke-width="2"
-                  fill="none"
-                  stroke-dasharray="5,5"
-                />
-              </svg>
-            </div>
+           <img src="img/sky (4).png" alt="">
           </div>
         </div>
       </div>
