@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -73,9 +72,76 @@
                 padding-bottom: 0;
             }
         }
+
+        /* Animations au scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-fade-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-fade-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-fade-left.visible,
+        .animate-fade-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-zoom {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-zoom.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .delay-1 { transition-delay: 0.2s; }
+        .delay-2 { transition-delay: 0.4s; }
+        .delay-3 { transition-delay: 0.6s; }
+        .delay-4 { transition-delay: 0.8s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-text {
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+            opacity: 0;
+        }
     </style>
 </head>
-<body class="with-mobile-tabs bg-gray-50 overflow-x-hidden pt-16 md:pt-20">
+<body class="with-mobile-tabs bg-gray-50 overflow-x-hidden">
     <!-- Header -->
     <header class="app-header bg-white shadow-sm">
         <div class="w-full px-4 sm:px-6 lg:px-8">
@@ -153,14 +219,15 @@
     <!-- Main Content -->
     <main class="min-h-screen">
         <!-- Title Section -->
-        <section class="text-center pt-8 pb-16 px-8">
+        <section class="text-center pt-28 pb-20 px-8">
+            <br>
             <h2
-                class="text-4xl md:text-6xl font-bold text-primary tracking-tight inline-block relative"
+                class="text-3xl md:text-5xl font-bold text-primary tracking-tight inline-block relative hero-title"
             >
                 Nos différentes réalisations
                 <span class="absolute left-0 right-0 bottom-1 h-3 bg-secondary -z-10"></span>
             </h2>
-            <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+            <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto hero-text">
                 Découvrez nos créations les plus récentes et laissez-vous inspirer par notre travail
             </p>
         </section>
@@ -168,7 +235,7 @@
         <section class="px-8 pb-16">
             <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow animate-zoom">
                     <div class="relative h-64 bg-gradient-to-br from-gray-100 to-gray-200">
                         <img src="https://readdy.ai/api/search-image?query=modern%20minimalist%20landing%20page%20design%20for%20online%20education%20platform%20with%20clean%20interface%20and%20intuitive%20navigation%20on%20laptop%20screen%2C%20white%20background%2C%20professional%20UI%2FUX%20design%20showcase&width=400&height=300&seq=1&orientation=landscape" 
                              alt="Landing Page School" class="w-full h-full object-cover object-top">
@@ -186,7 +253,7 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow animate-zoom delay-1">
                     <div class="relative h-64 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
                         <img src="img/voyage.jpg" 
                              alt="Brand Identity Travel" class="w-full h-full object-cover object-top">
@@ -204,7 +271,7 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow animate-zoom delay-2">
                     <div class="relative h-64 bg-gradient-to-br from-green-100 to-green-200">
                         <img src="img/design.jpg" 
                              alt="Mobile App Agriculture" class="w-full h-full object-cover object-top">
@@ -222,7 +289,7 @@
                 </div>
 
                 <!-- Project 4 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow animate-zoom">
                     <div class="relative h-64 bg-gradient-to-br from-purple-100 to-purple-200">
                         <img src="img/ui.jpg" 
                              alt="Dashboard SaaS" class="w-full h-full object-cover object-top">
@@ -240,7 +307,7 @@
                 </div>
 
                 <!-- Project 5 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow animate-zoom delay-1">
                     <div class="relative h-64 bg-gradient-to-br from-blue-100 to-blue-200">
                         <img src="img/UIUX.jpg" 
                              alt="Dashboard Analytics" class="w-full h-full object-cover object-top">
@@ -258,7 +325,7 @@
                 </div>
 
                 <!-- Project 6 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow animate-zoom delay-2">
                     <div class="relative h-64 bg-gradient-to-br from-teal-100 to-teal-200">
                         <img src="img/web.jpg" 
                              alt="E-commerce Platform" class="w-full h-full object-cover object-top">
@@ -281,8 +348,10 @@
     <!-- Footer -->
     <footer class="bg-primary text-white py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-4 gap-8 mb-12 bg-white/10 rounded-2xl p-6 md:p-8">
-          <div>
+        <div
+          class="grid md:grid-cols-4 gap-8 mb-12 bg-white/10 rounded-2xl p-6 md:p-8"
+        >
+          <div class="animate-fade-left">
             <div class="flex items-center mb-6">
               <img
                 src="img/logo2.png"
@@ -295,7 +364,7 @@
               innovantes et performantes.
             </p>
           </div>
-          <div>
+          <div class="animate-fade-left delay-1">
             <h3 class="font-bold text-lg mb-4">Liens Rapides</h3>
             <div class="space-y-2 text-gray-400">
               <a
@@ -324,7 +393,7 @@
               </a>
             </div>
           </div>
-          <div>
+          <div class="animate-fade-left delay-2">
             <h3 class="font-bold text-lg mb-4">Contact</h3>
             <div class="space-y-3 text-gray-400">
               <div class="flex items-center">
@@ -341,7 +410,7 @@
               </div>
             </div>
           </div>
-          <div>
+          <div class="animate-fade-left delay-3">
             <h3 class="font-bold text-lg mb-4">Newsletter</h3>
             <p class="text-gray-400 mb-4">
               Restez informé de nos dernières actualités et innovations.
@@ -356,13 +425,13 @@
               <button
                 class="bg-secondary text-white py-2 rounded-button flex items-center justify-center gap-2 hover:opacity-90"
               >
-                S'inscrire →
+                S'inscrire ?
               </button>
             </div>
           </div>
         </div>
         <div
-          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"
+          class=" pt-8 flex flex-col md:flex-row justify-between items-center"
         >
           <p class="text-gray-400 mb-4 md:mb-0">
             Copyright © 2026 Yaatal Digital. Tous droits réservés.
@@ -390,6 +459,7 @@
         </div>
       </div>
     </footer>
+
     <script>
         const tabletMenuToggle = document.getElementById("tablet-menu-toggle");
         const tabletMenu = document.getElementById("tablet-menu");
@@ -399,9 +469,26 @@
             tabletMenu.classList.toggle("hidden");
             tabletMenuToggle.setAttribute("aria-expanded", String(!isOpen));
         });
+
+        // Animation au scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-fade-left, .animate-fade-right, .animate-zoom');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
     </script>
 </body>
 </html>
-
-
-

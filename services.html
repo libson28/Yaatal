@@ -68,9 +68,6 @@
       :where([class^="ri-"])::before {
         content: "\f3c2";
       }
-      .hero-bg {
-        margin-top: -25px;
-      }
       @media (max-width: 767px), (min-width: 1024px) {
         #tablet-menu {
           display: none !important;
@@ -82,12 +79,91 @@
         }
       }
 
-      .Hero{
-        margin-top: -25px;
+      /* Animations au scroll */
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
+      }
+
+      .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .animate-fade-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
+      }
+
+      .animate-fade-right {
+        opacity: 0;
+        transform: translateX(50px);
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
+      }
+
+      .animate-fade-left.visible,
+      .animate-fade-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .animate-zoom {
+        opacity: 0;
+        transform: scale(0.9);
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
+      }
+
+      .animate-zoom.visible {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .delay-1 {
+        transition-delay: 0.2s;
+      }
+      .delay-2 {
+        transition-delay: 0.4s;
+      }
+      .delay-3 {
+        transition-delay: 0.6s;
+      }
+      .delay-4 {
+        transition-delay: 0.8s;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-title {
+        animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        opacity: 0;
+      }
+
+      .hero-text {
+        animation: fadeInUp 0.8s ease-out 0.4s forwards;
+        opacity: 0;
       }
     </style>
   </head>
-  <body class="with-mobile-tabs bg-white overflow-x-hidden pt-20 md:pt-24">
+  <body class="with-mobile-tabs bg-white overflow-x-hidden">
     <!-- Header -->
     <header class="app-header bg-white shadow-sm">
       <div class="w-full px-4 sm:px-6 lg:px-8">
@@ -214,16 +290,18 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative Hero min-h-[300px] flex items-center bg-gray-200">
+    <section class="relative Hero min-h-[420px] flex items-center bg-gray-200">
       <div class="w-full max-w-7xl mx-auto px-6">
-        <div class="max-w-3xl mx-auto text-center py-8">
+        <div class="max-w-3xl mx-auto text-center">
           <h2
-                class="text-4xl md:text-6xl font-bold text-primary tracking-tight inline-block relative z-0 mb-4"
-            >
-                Nos expertises
-                <span class="absolute left-0 right-0 bottom-1 h-3 bg-secondary z-[-1]"></span>
-            </h2>
-          <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+            class="text-4xl md:text-5xl font-bold text-primary tracking-tight inline-block relative z-0 mb-4 hero-title"
+          >
+            Nos expertises
+            <span
+              class="absolute left-0 right-0 bottom-1 h-3 bg-secondary z-[-1]"
+            ></span>
+          </h2>
+          <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto hero-text">
             Une approche holistique combinant créativité, technologie et
             stratégie pour propulser votre entreprise vers de nouveaux horizons
             numériques.
@@ -238,7 +316,7 @@
         <div class="grid md:grid-cols-3 gap-12">
           <!-- Design Numérique -->
           <div
-            class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow"
+            class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow animate-zoom"
           >
             <div
               class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6"
@@ -275,7 +353,7 @@
 
           <!-- Développement Web -->
           <div
-            class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow"
+            class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow animate-zoom delay-1"
           >
             <div
               class="w-16 h-16 bg-teal-100 rounded-xl flex items-center justify-center mb-6"
@@ -311,7 +389,7 @@
 
           <!-- Stratégie Digitale -->
           <div
-            class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow"
+            class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow animate-zoom delay-2"
           >
             <div
               class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6"
@@ -349,20 +427,27 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-primary">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="flex flex-col lg:flex-row items-center justify-between">
-          <div class="lg:w-2/3 mb-8 lg:mb-0">
-            <h3 class="text-3xl font-bold text-white mb-4">
+    <section class="bg-gray-50">
+      <div
+        class="w-full mx-auto py-16 bg-primary CTA px-4 sm:px-6 lg:px-8 max-w-7xl rounded-lg"
+      >
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-8"
+        >
+          <div class="text-white mb-6 md:mb-0 animate-fade-left max-w-2xl">
+            <h2 class="text-2xl md:text-3xl font-bold mb-2">
               Vous êtes une entreprise, une organisation ou un entrepreneur ou
               encore une institution ?
-            </h3>
-            <p class="text-teal-100 text-lg">
+            </h2>
+            <p class="text-white/90">
               Yaatal groupe est votre partenaire idéal pour tous vos solutions
-              numérique sur mesure
+              numérique sur mesure.
             </p>
           </div>
-          <div class="flex flex-col sm:flex-row gap-4">
+
+          <div
+            class="flex flex-col sm:flex-row gap-4 animate-fade-right shrink-0"
+          >
             <button
               class="bg-secondary text-white px-8 py-3 !rounded-button hover:bg-secondary/90 transition-colors whitespace-nowrap font-semibold"
             >
@@ -382,62 +467,120 @@
     <section class="py-16 md:py-24 bg-gray-50">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <!-- en-tête de section -->
-        <div class="text-center mb-16">
+        <div class="text-center mb-16 animate-fade-left">
           <h2
-            class="text-4xl md:text-6xl font-bold text-primary tracking-tight inline-block relative z-0 mb-4"
+            class="text-4xl md:text-5xl font-bold text-primary tracking-tight inline-block relative z-0 mb-4"
           >
             Notre processus
-            <span class="absolute left-0 right-0 bottom-1 h-3 bg-secondary z-[-1]"></span>
+            <span
+              class="absolute left-0 right-0 bottom-1 h-3 bg-secondary z-[-1]"
+            ></span>
           </h2>
           <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
             Une méthodologie agile pour des résultats concrets.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-          <div class="relative bg-white rounded-2xl p-7 border border-gray-100">
-            <span class="absolute top-5 right-6 text-5xl font-black text-gray-200">01</span>
-            <div class="w-12 h-12 rounded-full border-2 border-primary text-primary flex items-center justify-center mb-4">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6"
+        >
+          <div
+            class="relative bg-white rounded-2xl p-7 border border-gray-100 animate-zoom"
+          >
+            <span
+              class="absolute top-5 right-6 text-5xl font-black text-gray-200"
+              >01</span
+            >
+            <div
+              class="w-12 h-12 rounded-full border-2 border-primary text-primary flex items-center justify-center mb-4"
+            >
               <i class="ri-message-2-line text-xl"></i>
             </div>
-            <h3 class="text-3xl font-semibold text-primary mb-3">Brief et cadrage</h3>
-            <p class="text-gray-600  leading-relaxed">Nous analysons vos besoins, définissons la stratégie et les objectifs du projet.</p>
-            <div class="hidden lg:flex absolute top-1/2 -right-7 -translate-y-1/2 items-center z-10">
-              <span class="w-7 h-px bg-primary"></span><i class="ri-arrow-right-line text-primary"></i>
+            <h3 class="text-3xl font-semibold text-primary mb-3">
+              Brief et cadrage
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Nous analysons vos besoins, définissons la stratégie et les
+              objectifs du projet.
+            </p>
+            <div
+              class="hidden lg:flex absolute top-1/2 -right-7 -translate-y-1/2 items-center z-10"
+            >
+              <span class="w-7 h-px bg-primary"></span
+              ><i class="ri-arrow-right-line text-primary"></i>
             </div>
           </div>
 
-          <div class="relative bg-white rounded-2xl p-7 border border-gray-100">
-            <span class="absolute top-5 right-6 text-5xl font-black text-gray-200">02</span>
-            <div class="w-12 h-12 rounded-full border-2 border-secondary text-secondary flex items-center justify-center mb-4">
+          <div
+            class="relative bg-white rounded-2xl p-7 border border-gray-100 animate-zoom delay-1"
+          >
+            <span
+              class="absolute top-5 right-6 text-5xl font-black text-gray-200"
+              >02</span
+            >
+            <div
+              class="w-12 h-12 rounded-full border-2 border-secondary text-secondary flex items-center justify-center mb-4"
+            >
               <i class="ri-compass-3-line text-xl"></i>
             </div>
-            <h3 class="text-3xl font-semibold text-[#c9960e] mb-3">Conception UI/UX</h3>
-            <p class="text-gray-600  leading-relaxed">Création des parcours utilisateurs et des maquettes graphiques haute fidélité.</p>
-            <div class="hidden lg:flex absolute top-1/2 -right-7 -translate-y-1/2 items-center z-10">
-              <span class="w-7 h-px bg-green-600"></span><i class="ri-arrow-right-line text-green-600"></i>
+            <h3 class="text-3xl font-semibold text-[#c9960e] mb-3">
+              Conception UI/UX
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Création des parcours utilisateurs et des maquettes graphiques
+              haute fidélité.
+            </p>
+            <div
+              class="hidden lg:flex absolute top-1/2 -right-7 -translate-y-1/2 items-center z-10"
+            >
+              <span class="w-7 h-px bg-green-600"></span
+              ><i class="ri-arrow-right-line text-green-600"></i>
             </div>
           </div>
 
-          <div class="relative bg-white rounded-2xl p-7 border border-gray-100">
-            <span class="absolute top-5 right-6 text-5xl font-black text-gray-200">03</span>
-            <div class="w-12 h-12 rounded-full border-2 border-red-400 text-red-400 flex items-center justify-center mb-4">
+          <div
+            class="relative bg-white rounded-2xl p-7 border border-gray-100 animate-zoom delay-2"
+          >
+            <span
+              class="absolute top-5 right-6 text-5xl font-black text-gray-200"
+              >03</span
+            >
+            <div
+              class="w-12 h-12 rounded-full border-2 border-red-400 text-red-400 flex items-center justify-center mb-4"
+            >
               <i class="ri-code-s-slash-line text-xl"></i>
             </div>
-            <h3 class="text-3xl font-semibold text-red-400 mb-3">Développement</h3>
-            <p class="text-gray-600  leading-relaxed">Intégration technique robuste, tests et optimisation des performances.</p>
-            <div class="hidden lg:flex absolute top-1/2 -right-7 -translate-y-1/2 items-center z-10">
-              <span class="w-7 h-px bg-primary"></span><i class="ri-arrow-right-line text-primary"></i>
+            <h3 class="text-3xl font-semibold text-red-400 mb-3">
+              Développement
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Intégration technique robuste, tests et optimisation des
+              performances.
+            </p>
+            <div
+              class="hidden lg:flex absolute top-1/2 -right-7 -translate-y-1/2 items-center z-10"
+            >
+              <span class="w-7 h-px bg-primary"></span
+              ><i class="ri-arrow-right-line text-primary"></i>
             </div>
           </div>
 
-          <div class="relative bg-white rounded-2xl p-7 border border-gray-100">
-            <span class="absolute top-5 right-6 text-5xl font-black text-gray-200">04</span>
-            <div class="w-12 h-12 rounded-full border-2 border-blue-600 text-blue-600 flex items-center justify-center mb-4">
+          <div
+            class="relative bg-white rounded-2xl p-7 border border-gray-100 animate-zoom delay-3"
+          >
+            <span
+              class="absolute top-5 right-6 text-5xl font-black text-gray-200"
+              >04</span
+            >
+            <div
+              class="w-12 h-12 rounded-full border-2 border-blue-600 text-blue-600 flex items-center justify-center mb-4"
+            >
               <i class="ri-rocket-2-line text-xl"></i>
             </div>
             <h3 class="text-3xl font-semibold text-blue-600 mb-3">Lancement</h3>
-            <p class="text-gray-600  leading-relaxed">Mise en ligne, formation de vos équipes et suivi post-lancement.</p>
+            <p class="text-gray-600 leading-relaxed">
+              Mise en ligne, formation de vos équipes et suivi post-lancement.
+            </p>
           </div>
         </div>
       </div>
@@ -446,8 +589,10 @@
     <!-- Footer -->
     <footer class="bg-primary text-white py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-4 gap-8 mb-12 bg-white/10 rounded-2xl p-6 md:p-8">
-          <div>
+        <div
+          class="grid md:grid-cols-4 gap-8 mb-12 bg-white/10 rounded-2xl p-6 md:p-8"
+        >
+          <div class="animate-fade-left">
             <div class="flex items-center mb-6">
               <img
                 src="img/logo2.png"
@@ -460,7 +605,7 @@
               innovantes et performantes.
             </p>
           </div>
-          <div>
+          <div class="animate-fade-left delay-1">
             <h3 class="font-bold text-lg mb-4">Liens Rapides</h3>
             <div class="space-y-2 text-gray-400">
               <a
@@ -489,7 +634,7 @@
               </a>
             </div>
           </div>
-          <div>
+          <div class="animate-fade-left delay-2">
             <h3 class="font-bold text-lg mb-4">Contact</h3>
             <div class="space-y-3 text-gray-400">
               <div class="flex items-center">
@@ -506,7 +651,7 @@
               </div>
             </div>
           </div>
-          <div>
+          <div class="animate-fade-left delay-3">
             <h3 class="font-bold text-lg mb-4">Newsletter</h3>
             <p class="text-gray-400 mb-4">
               Restez informé de nos dernières actualités et innovations.
@@ -521,13 +666,13 @@
               <button
                 class="bg-secondary text-white py-2 rounded-button flex items-center justify-center gap-2 hover:opacity-90"
               >
-                S'inscrire →
+                S'inscrire ?
               </button>
             </div>
           </div>
         </div>
         <div
-          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"
+          class="pt-8 flex flex-col md:flex-row justify-between items-center"
         >
           <p class="text-gray-400 mb-4 md:mb-0">
             Copyright © 2026 Yaatal Digital. Tous droits réservés.
@@ -555,6 +700,7 @@
         </div>
       </div>
     </footer>
+
     <script>
       const tabletMenuToggle = document.getElementById("tablet-menu-toggle");
       const tabletMenu = document.getElementById("tablet-menu");
@@ -564,9 +710,31 @@
         tabletMenu.classList.toggle("hidden");
         tabletMenuToggle.setAttribute("aria-expanded", String(!isOpen));
       });
+
+      // Animation au scroll
+      document.addEventListener("DOMContentLoaded", function () {
+        const animatedElements = document.querySelectorAll(
+          ".animate-fade-left, .animate-fade-right, .animate-zoom",
+        );
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px",
+          },
+        );
+
+        animatedElements.forEach((element) => {
+          observer.observe(element);
+        });
+      });
     </script>
   </body>
 </html>
-
-
-
