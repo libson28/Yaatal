@@ -1,780 +1,666 @@
 ﻿<!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YAATAL Digital - L'innovation au service de vos idées</title>
-    <script src="https://cdn.tailwindcss.com/"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: { primary: "#02566b", secondary: "#f59e0b" },
-            borderRadius: {
-              none: "0px",
-              sm: "4px",
-              DEFAULT: "8px",
-              md: "12px",
-              lg: "16px",
-              xl: "20px",
-              "2xl": "24px",
-              "3xl": "32px",
-              full: "9999px",
-              button: "8px",
-            },
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YAATAL Digital - L'innovation au service de vos idées</title>
+  <script src="https://cdn.tailwindcss.com/"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: "#02566b", secondary: "#f59e0b" },
+          borderRadius: {
+            none: "0px",
+            sm: "4px",
+            DEFAULT: "8px",
+            md: "12px",
+            lg: "16px",
+            xl: "20px",
+            "2xl": "24px",
+            "3xl": "32px",
+            full: "9999px",
+            button: "8px",
           },
         },
-      };
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
-    />
-    <style>
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        max-width: 100%;
-        overflow-x: clip;
-      }
-      .app-header {
-        position: fixed !important;
-        top: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        z-index: 60;
-      }
-      .mobile-tabs {
-        position: fixed !important;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        z-index: 60;
-        padding-bottom: env(safe-area-inset-bottom);
-      }
-      .with-mobile-tabs {
-        padding-bottom: calc(5rem + env(safe-area-inset-bottom));
-      }
-      :where([class^="ri-"])::before {
-        content: "\f3c2";
-      }
-      @media (max-width: 767px), (min-width: 1024px) {
-        #tablet-menu {
-          display: none !important;
-        }
-      }
-      @media (min-width: 768px) {
-        .with-mobile-tabs {
-          padding-bottom: 0;
-        }
-      }
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: clip;
+    }
 
-      .CTA p{
-        font-size: 13px;
+    .app-header {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 60;
+    }
+
+    .mobile-tabs {
+      position: fixed !important;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 60;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .with-mobile-tabs {
+      padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+    }
+
+    :where([class^="ri-"])::before {
+      content: "\f3c2";
+    }
+
+    @media (max-width: 767px),
+    (min-width: 1024px) {
+      #tablet-menu {
+        display: none !important;
       }
-    </style>
-  </head>
-  <body class="with-mobile-tabs bg-white overflow-x-hidden pt-20 md:pt-24">
-    <!-- Header -->
-    <header class="app-header bg-white shadow-sm">
+    }
+
+    @media (min-width: 768px) {
+      .with-mobile-tabs {
+        padding-bottom: 0;
+      }
+    }
+
+    .CTA p {
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body class="with-mobile-tabs bg-white overflow-x-hidden pt-20 md:pt-24">
+  <!-- Header -->
+  <header class="app-header bg-white shadow-sm h-24">
+    <div class="container">
       <div class="w-full px-4 sm:px-6 lg:px-8">
-        <div
-          class="hidden lg:grid lg:grid-cols-[1fr_auto_1fr] items-center py-4 gap-4"
-        >
+        <div class="hidden lg:grid lg:grid-cols-[1fr_auto_1fr] items-center py-4 gap-4">
           <div class="flex items-center justify-self-start">
-            <img src="img/Logo.png" alt="YAATAL Digital" class="h-10 w-auto" />
+            <img src="img/Logo.png" alt="YAATAL Digital" class="h-12 w-auto" />
           </div>
           <nav class="flex items-center justify-center gap-8">
-            <a
-              href="index.html"
-              class="text-primary hover:text-primary transition-colors"
-              >Accueil</a
-            >
-            <a
-              href="services.html"
-              class="text-gray-600 hover:text-primary transition-colors"
-              >Services</a
-            >
-            <a
-              href="portfolio.html"
-              class="text-gray-600 hover:text-primary transition-colors"
-              >Portfolio</a
-            >
-            <a
-              href="contact.html"
-              class="text-gray-600 hover:text-primary transition-colors"
-              >Contact</a
-            >
+            <a href="index.html" class="text-primary hover:text-primary transition-colors">Accueil</a>
+            <a href="services.html" class="text-gray-600 hover:text-primary transition-colors">Services</a>
+            <a href="portfolio.html" class="text-gray-600 hover:text-primary transition-colors">Portfolio</a>
+            <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
           </nav>
           <div class="justify-self-end">
-            <a
-              href="contact.html"
-              class="inline-block bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
-            >
+            <a href="contact.html"
+              class="inline-block bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">
               Demandez un devis
             </a>
           </div>
         </div>
         <div class="flex md:hidden justify-center items-center py-4">
           <div class="flex items-center">
-            <img src="img/Logo.png" alt="YAATAL Digital" class="h-10 w-auto" />
+            <img src="img/Logo.png" alt="YAATAL Digital" class="h-12 w-auto" />
           </div>
         </div>
         <div class="hidden md:flex lg:hidden justify-between items-center py-4">
           <div class="flex items-center">
-            <img src="img/Logo.png" alt="YAATAL Digital" class="h-10 w-auto" />
+            <img src="img/Logo.png" alt="YAATAL Digital" class="h-12 w-auto" />
           </div>
-          <button
-            id="tablet-menu-toggle"
+          <button id="tablet-menu-toggle"
             class="w-10 h-10 flex items-center justify-center rounded border border-gray-200 text-gray-700"
-            aria-label="Ouvrir le menu"
-            aria-expanded="false"
-          >
+            aria-label="Ouvrir le menu" aria-expanded="false">
             <i class="ri-menu-line text-xl"></i>
           </button>
         </div>
         <div id="tablet-menu" class="hidden border-t border-gray-100 pb-4">
           <nav class="flex flex-col pt-4 space-y-3">
-            <a
-              href="index.html"
-              class="text-gray-900 hover:text-primary transition-colors"
-              >Accueil</a
-            >
-            <a
-              href="services.html"
-              class="text-gray-600 hover:text-primary transition-colors"
-              >Services</a
-            >
-            <a
-              href="portfolio.html"
-              class="text-gray-600 hover:text-primary transition-colors"
-              >Portfolio</a
-            >
-            <a
-              href="contact.html"
-              class="text-gray-600 hover:text-primary transition-colors"
-              >Contact</a
-            >
+            <a href="index.html" class="text-gray-900 hover:text-primary transition-colors">Accueil</a>
+            <a href="services.html" class="text-gray-600 hover:text-primary transition-colors">Services</a>
+            <a href="portfolio.html" class="text-gray-600 hover:text-primary transition-colors">Portfolio</a>
+            <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
           </nav>
-          <a
-            href="#"
-            class="mt-4 w-full inline-block text-center bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors"
-          >
+          <a href="#"
+            class="mt-4 w-full inline-block text-center bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors">
             Demandez un devis
           </a>
         </div>
       </div>
-    </header>
-    <nav
-      class="mobile-tabs md:hidden bg-white border-t border-gray-200 shadow-[0_-4px_14px_rgba(0,0,0,0.08)]"
-    >
-      <div class="grid grid-cols-4 w-full">
-        <a
-          href="index.html"
-          class="flex flex-col items-center justify-center py-2 text-primary bg-primary/10 rounded-lg mx-1 my-1"
-        >
-          <i class="ri-home-5-line text-lg"></i>
-          <span class="text-[11px] font-medium">Accueil</span>
-        </a>
-        <a
-          href="services.html"
-          class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-primary transition-colors"
-        >
-          <i class="ri-briefcase-4-line text-lg"></i>
-          <span class="text-[11px] font-medium">Services</span>
-        </a>
-        <a
-          href="portfolio.html"
-          class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-primary transition-colors"
-        >
-          <i class="ri-layout-grid-line text-lg"></i>
-          <span class="text-[11px] font-medium">Portfolio</span>
-        </a>
-        <a
-          href="contact.html"
-          class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-primary transition-colors"
-        >
-          <i class="ri-customer-service-2-line text-lg"></i>
-          <span class="text-[11px] font-medium">contact</span>
-        </a>
-      </div>
-    </nav>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section
-      class="relative text-white overflow-hidden min-h-[420px] md:min-h-[500px] lg:min-h-[480px] flex items-center"
-      style="
+  <nav class="mobile-tabs md:hidden bg-white border-t border-gray-200 shadow-[0_-4px_14px_rgba(0,0,0,0.08)]">
+    <div class="grid grid-cols-4 w-full">
+      <a href="index.html"
+        class="flex flex-col items-center justify-center py-2 text-primary bg-primary/10 rounded-lg mx-1 my-1">
+        <i class="ri-home-5-line text-lg"></i>
+        <span class="text-[11px] font-medium">Accueil</span>
+      </a>
+      <a href="services.html"
+        class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-primary transition-colors">
+        <i class="ri-briefcase-4-line text-lg"></i>
+        <span class="text-[11px] font-medium">Services</span>
+      </a>
+      <a href="portfolio.html"
+        class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-primary transition-colors">
+        <i class="ri-layout-grid-line text-lg"></i>
+        <span class="text-[11px] font-medium">Portfolio</span>
+      </a>
+      <a href="contact.html"
+        class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-primary transition-colors">
+        <i class="ri-customer-service-2-line text-lg"></i>
+        <span class="text-[11px] font-medium">contact</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative text-white overflow-hidden min-h-[420px] md:min-h-[500px] lg:min-h-[480px] flex items-center"
+    style="
         background-image: url(&quot;img/banner.png&quot;);
         background-size: cover;
         background-position: center;
         margin-top: -25px;
-      "
-    >
-      <div class="absolute inset-0 bg-primary/65"></div>
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="w-full flex justify-center">
-          <div class="max-w-3xl text-center mx-auto mt-[-10px]">
-            <div
-              class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-secondary/80 bg-primary/30 text-secondary text-sm font-medium"
-            >
-              <i class="ri-sparkling-2-line"></i>
-              <span>Agence de Digitalisation et design numérique</span>
-            </div>
-            <h1 class="text-5xl font-bold mb-6 leading-tight">
-              L'innovation au service<br />
-              <span class="text-secondary">de vos idées</span>
-            </h1>
-            <p class="text-xl mb-8 text-white/90 leading-relaxed">
-              Nous transformons vos concepts créatifs en solutions numériques
-              innovantes. Notre expertise technique et notre vision stratégique
-              donnent vie à vos projets.
-            </p>
-            <div
-              class="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            >
-              <button
-                class="bg-secondary text-white px-8 py-3 !rounded-button hover:bg-secondary/90 transition-colors whitespace-nowrap font-semibold"
-              >
-                Demandez un devis
-              </button>
-              <button
-                class="border-2 border-white text-white px-8 py-3 !rounded-button hover:bg-white hover:text-primary transition-colors whitespace-nowrap"
-              >
-                Nos services
-              </button>
-            </div>
+      ">
+    <div class="absolute inset-0 bg-primary/65"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="w-full flex justify-center">
+        <div class="max-w-3xl text-center mx-auto mt-[-10px]">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-secondary/80 bg-primary/30 text-secondary text-sm font-medium">
+            <i class="ri-sparkling-2-line"></i>
+            <span>Agence de Digitalisation et design numérique</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Innovation Section -->
-    <section class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 class="text-4xl font-bold text-primary mb-6">
-              L'innovation au services de<br />
-              <span class="text-secondary">vos idées</span>
-            </h2>
-            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-              Yaatal Design accompagne les entreprises dans la création
-              d'expériences numériques exceptionnelles. De la conception à la
-              réalisation, nous mettons notre expertise au service de vos
-              ambitions digitales.
-            </p>
-            <p class="text-gray-600 leading-relaxed">
-              Notre approche collaborative et notre maîtrise des technologies
-              modernes nous permettent de créer des solutions sur mesure qui
-              répondent parfaitement à vos besoins et dépassent vos attentes.
-            </p>
-            <div class="grid sm:grid-cols-2 gap-6 pt-4">
-              <!-- Vision -->
-              <div class="flex gap-4 p-5 bg-white border rounded-lg">
-                <div
-                  class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-lg"
-                >
-                  <i class="ri-focus-3-line text-2xl"></i>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold text-gray-900">Notre vision</h4>
-                  <p class="text-xs text-gray-600">
-                    Devenir la référence du design digital en Afrique de
-                    l'Ouest.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Innovation -->
-              <div class="flex gap-4 p-5 bg-white border rounded-lg">
-                <div
-                  class="w-12 h-12 flex items-center justify-center bg-secondary/10 text-secondary rounded-lg"
-                >
-                  <i class="ri-lightbulb-line text-2xl"></i>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold text-gray-900">Innovation</h4>
-                  <p class="text-xs text-gray-600">
-                    L'IA au service de la créativité et de la performance.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="relative">
-            <img src="img/component.png" alt="" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Expertise Section -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2
-            class="text-4xl md:text-6xl font-bold text-primary tracking-tight inline-block relative z-0 mb-4"
-          >
-            Notre Expertise
-            <span class="absolute left-0 right-0 bottom-1 h-3 bg-secondary z-[-1]"></span>
-          </h2>
-          <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Découvrez notre gamme complète de services numériques conçus pour
-            propulser votre entreprise vers le succès.
+          <h1 class="text-5xl font-bold mb-6 leading-tight">
+            L'innovation au service<br />
+            <span class="text-secondary">de vos idées</span>
+          </h1>
+          <p class="text-xl mb-8 text-white/90 leading-relaxed">
+            Nous transformons vos concepts créatifs en solutions numériques
+            innovantes. Notre expertise technique et notre vision stratégique
+            donnent vie à vos projets.
           </p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- Card 1 -->
-          <div
-            class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition"
-          >
-            <div
-              class="w-12 h-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary mb-6"
-            >
-              <i class="ri-palette-line text-2xl"></i>
-            </div>
-
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              Design Numérique
-            </h3>
-
-            <p class="text-gray-600 text-sm mb-6">
-              Création d'identités visuelles fortes et d'interfaces centrées
-              utilisateur, optimisées par l'intelligence artificielle pour un
-              impact maximal.
-            </p>
-
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-primary rounded-full"></span>
-                Branding & Identité
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-primary rounded-full"></span>
-                UI/UX Design
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-primary rounded-full"></span>
-                Génération d'idées par IA
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-primary rounded-full"></span>
-                Design System
-              </li>
-            </ul>
-          </div>
-
-          <!-- Card 2 -->
-          <div
-            class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition"
-          >
-            <div
-              class="w-12 h-12 flex items-center justify-center rounded-lg bg-blue-100 text-blue-600 mb-6"
-            >
-              <i class="ri-code-s-slash-line text-2xl"></i>
-            </div>
-
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              Développement web
-            </h3>
-
-            <p class="text-gray-600 text-sm mb-6">
-              Conception de solutions robustes, évolutives et sécurisées. Du
-              site vitrine aux applications complexes, nous codons votre succès.
-            </p>
-
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-primary rounded-full"></span>
-                Branding & Identité
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-primary rounded-full"></span>
-                UI/UX Design
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-primary rounded-full"></span>
-                Génération d'idées par IA
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-primary rounded-full"></span>
-                Design System
-              </li>
-            </ul>
-          </div>
-
-          <!-- Card 3 -->
-          <div
-            class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition"
-          >
-            <div
-              class="w-12 h-12 flex items-center justify-center rounded-lg bg-yellow-100 text-yellow-600 mb-6"
-            >
-              <i class="ri-line-chart-line text-2xl"></i>
-            </div>
-
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              Stratégie Digital
-            </h3>
-
-            <p class="text-gray-600 text-sm mb-6">
-              Accompagnement complet dans votre transformation numérique. Nous
-              définissons la feuille de route pour atteindre vos objectifs.
-            </p>
-
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-primary rounded-full"></span>
-                Branding & Identité
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-primary rounded-full"></span>
-                UI/UX Design
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-primary rounded-full"></span>
-                Génération d'idées par IA
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-primary rounded-full"></span>
-                Design System
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-16 bg-primary CTA">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row items-center justify-between">
-          <div class="text-white mb-6 md:mb-0">
-            <h2 class="text-3xl font-bold mb-2">
-              Vous êtes une entreprise, une organisation ou un entrepreneur ?
-            </h2>
-            <p class="text-white/90">
-              Parlons de votre projet et découvrons ensemble comment nous
-              pouvons vous accompagner dans votre transformation digitale.
-            </p>
-          </div>
-          <div class="flex flex-col sm:flex-row gap-4">
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
-              class="bg-secondary text-white px-8 py-3 !rounded-button hover:bg-secondary/90 transition-colors whitespace-nowrap font-semibold"
-            >
-              Commencer
+              class="bg-secondary text-white px-8 py-3 !rounded-button hover:bg-secondary/90 transition-colors whitespace-nowrap font-semibold">
+              Demandez un devis
             </button>
             <button
-              class="border-2 border-white text-white px-8 py-3 !rounded-button hover:bg-white hover:text-primary transition-colors whitespace-nowrap"
-            >
-              Prendre un RDV
+              class="border-2 border-white text-white px-8 py-3 !rounded-button hover:bg-white hover:text-primary transition-colors whitespace-nowrap">
+              Nos services
             </button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Process Section -->
-    <section class="py-16 md:py-24 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2
-            class="text-4xl md:text-6xl font-bold text-primary tracking-tight inline-block relative z-0 mb-4"
-          >
-            Notre processus
-            <span class="absolute left-0 right-0 bottom-1 h-3 bg-secondary z-[-1]"></span>
+  <!-- Innovation Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-4xl font-bold text-primary mb-6">
+            L'innovation au services de<br />
+            <span class="text-secondary">vos idées</span>
           </h2>
-          <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
-            Une méthodologie agile pour des résultats concrets.
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+            Yaatal Design accompagne les entreprises dans la création
+            d'expériences numériques exceptionnelles. De la conception à la
+            réalisation, nous mettons notre expertise au service de vos
+            ambitions digitales.
           </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-          <div class="relative bg-white rounded-2xl p-7 border border-gray-100">
-            <span class="absolute top-5 right-6 text-5xl font-black text-gray-200">01</span>
-            <div class="w-12 h-12 rounded-full border-2 border-primary text-primary flex items-center justify-center mb-4">
-              <i class="ri-message-2-line text-xl"></i>
-            </div>
-            <h3 class="text-3xl font-semibold text-primary mb-3">Brief et cadrage</h3>
-            <p class="text-gray-600 leading-relaxed">Nous analysons vos besoins, définissons la stratégie et les objectifs du projet.</p>
-            <div class="hidden lg:flex absolute top-1/2 -right-7 -translate-y-1/2 items-center z-10">
-              <span class="w-7 h-px bg-primary"></span><i class="ri-arrow-right-line text-primary"></i>
-            </div>
-          </div>
-
-          <div class="relative bg-white rounded-2xl p-7 border border-gray-100">
-            <span class="absolute top-5 right-6 text-5xl font-black text-gray-200">02</span>
-            <div class="w-12 h-12 rounded-full border-2 border-secondary text-secondary flex items-center justify-center mb-4">
-              <i class="ri-compass-3-line text-xl"></i>
-            </div>
-            <h3 class="text-3xl font-semibold text-[#c9960e] mb-3">Conception UI/UX</h3>
-            <p class="text-gray-600 leading-relaxed">Création des parcours utilisateurs et des maquettes graphiques haute fidélité.</p>
-            <div class="hidden lg:flex absolute top-1/2 -right-7 -translate-y-1/2 items-center z-10">
-              <span class="w-7 h-px bg-green-600"></span><i class="ri-arrow-right-line text-green-600"></i>
-            </div>
-          </div>
-
-          <div class="relative bg-white rounded-2xl p-7 border border-gray-100">
-            <span class="absolute top-5 right-6 text-5xl font-black text-gray-200">03</span>
-            <div class="w-12 h-12 rounded-full border-2 border-red-400 text-red-400 flex items-center justify-center mb-4">
-              <i class="ri-code-s-slash-line text-xl"></i>
-            </div>
-            <h3 class="text-3xl font-semibold text-red-400 mb-3">Développement</h3>
-            <p class="text-gray-600 leading-relaxed">Intégration technique robuste, tests et optimisation des performances.</p>
-            <div class="hidden lg:flex absolute top-1/2 -right-7 -translate-y-1/2 items-center z-10">
-              <span class="w-7 h-px bg-primary"></span><i class="ri-arrow-right-line text-primary"></i>
-            </div>
-          </div>
-
-          <div class="relative bg-white rounded-2xl p-7 border border-gray-100">
-            <span class="absolute top-5 right-6 text-5xl font-black text-gray-200">04</span>
-            <div class="w-12 h-12 rounded-full border-2 border-blue-600 text-blue-600 flex items-center justify-center mb-4">
-              <i class="ri-rocket-2-line text-xl"></i>
-            </div>
-            <h3 class="text-3xl font-semibold text-blue-600 mb-3">Lancement</h3>
-            <p class="text-gray-600 leading-relaxed">Mise en ligne, formation de vos équipes et suivi post-lancement.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="py-20 bg-[#f3f4f6]">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2
-            class="text-4xl md:text-6xl font-bold text-primary tracking-tight inline-block relative z-0 mb-4"
-          >
-            Ce qu'ils disent de nous
-            <span
-              class="absolute left-0 right-0 bottom-1 h-3 bg-secondary z-[-1]"
-            ></span>
-          </h2>
-          <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Ils témoignent de l'impact de nos solutions : innovation, fiabilité
-            et performance au coeur de chaque projet.
+          <p class="text-gray-600 leading-relaxed">
+            Notre approche collaborative et notre maîtrise des technologies
+            modernes nous permettent de créer des solutions sur mesure qui
+            répondent parfaitement à vos besoins et dépassent vos attentes.
           </p>
-        </div>
+          <div class="grid sm:grid-cols-2 gap-6 pt-4">
+            <!-- Vision -->
+            <div class="flex gap-4 p-5 bg-white border rounded-lg">
+              <div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-lg">
+                <i class="ri-focus-3-line text-2xl"></i>
+              </div>
 
-        <div class="grid md:grid-cols-2 gap-6">
-          <article class="bg-white rounded-2xl p-6 shadow-sm">
-            <div class="flex gap-4">
-              <img
-                src="data:image/jpeg;base64,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"
-                alt="Jean Paul FAYE"
-                class="w-16 h-16 rounded-full object-cover border-4 border-secondary"
-              />
-              <div class="flex-1">
-                <i
-                  class="ri-double-quotes-l text-4xl leading-none text-primary"
-                ></i>
-                <p class="text-sm text-gray-600 leading-relaxed mt-2">
-                  Yaatal Design a été un véritable catalyseur pour le
-                  développement de notre startup. Grâce à leurs ressources et à
-                  leur soutien, nous avons pu accéder à des mentors
-                  expérimentés.
+              <div>
+                <h4 class="font-semibold text-gray-900">Notre vision</h4>
+                <p class="text-xs text-gray-600">
+                  Devenir la référence du design digital en Afrique de
+                  l'Ouest.
                 </p>
-                <h4 class="mt-3 text-xl font-bold text-primary">
-                  Jean Paul FAYE
-                </h4>
-                <p class="text-gray-500">DG de Tech Innovate</p>
               </div>
             </div>
-          </article>
 
-          <article class="bg-white rounded-2xl p-6 shadow-sm">
-            <div class="flex gap-4">
-              <img
-                src="data:image/jpeg;base64,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"
-                alt="Ornella Marie Bah"
-                class="w-16 h-16 rounded-full object-cover border-4 border-secondary"
-              />
-              <div class="flex-1">
-                <i
-                  class="ri-double-quotes-l text-4xl leading-none text-primary"
-                ></i>
-                <p class="text-sm text-gray-600 leading-relaxed mt-2">
-                  Les programmes de formation proposés par Yaatal Design ont été
-                  essentiels pour notre croissance. Les ateliers pratiques nous
-                  ont permis d'acquérir des compétences cruciales.
+            <!-- Innovation -->
+            <div class="flex gap-4 p-5 bg-white border rounded-lg">
+              <div class="w-12 h-12 flex items-center justify-center bg-secondary/10 text-secondary rounded-lg">
+                <i class="ri-lightbulb-line text-2xl"></i>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-gray-900">Innovation</h4>
+                <p class="text-xs text-gray-600">
+                  L'IA au service de la créativité et de la performance.
                 </p>
-                <h4 class="mt-3 text-xl font-bold text-primary">
-                  Ornella Marie Bah
-                </h4>
-                <p class="text-gray-500">CEO de Green solution</p>
               </div>
             </div>
-          </article>
+          </div>
         </div>
-
-        <div class="flex justify-center gap-3 mt-8">
-          <span class="w-2.5 h-2.5 rounded-full bg-primary/30"></span>
-          <span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+        <div class="relative">
+          <img src="img/component.png" alt="" />
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Partners Section -->
-    <section class="py-16 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-6xl font-bold text-primary tracking-tight inline-block relative z-0 mb-4">
-            Nos partenaires
-            <span class="absolute left-0 right-0 bottom-1 h-3 bg-secondary z-[-1]"></span>
+  <!-- Expertise Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-6xl font-bold text-primary tracking-tight inline-block relative z-0 mb-4">
+          Notre Expertise
+          <span class="absolute left-0 right-0 bottom-1 h-3 bg-secondary z-[-1]"></span>
+        </h2>
+        <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+          Découvrez notre gamme complète de services numériques conçus pour
+          propulser votre entreprise vers le succès.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary mb-6">
+            <i class="ri-palette-line text-2xl"></i>
+          </div>
+
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">
+            Design Numérique
+          </h3>
+
+          <p class="text-gray-600 text-sm mb-6">
+            Création d'identités visuelles fortes et d'interfaces centrées
+            utilisateur, optimisées par l'intelligence artificielle pour un
+            impact maximal.
+          </p>
+
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              Branding & Identité
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              UI/UX Design
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              Génération d'idées par IA
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              Design System
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-blue-100 text-blue-600 mb-6">
+            <i class="ri-code-s-slash-line text-2xl"></i>
+          </div>
+
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">
+            Développement web
+          </h3>
+
+          <p class="text-gray-600 text-sm mb-6">
+            Conception de solutions robustes, évolutives et sécurisées. Du
+            site vitrine aux applications complexes, nous codons votre succès.
+          </p>
+
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              Branding & Identité
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              UI/UX Design
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              Génération d'idées par IA
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              Design System
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-yellow-100 text-yellow-600 mb-6">
+            <i class="ri-line-chart-line text-2xl"></i>
+          </div>
+
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">
+            Stratégie Digital
+          </h3>
+
+          <p class="text-gray-600 text-sm mb-6">
+            Accompagnement complet dans votre transformation numérique. Nous
+            définissons la feuille de route pour atteindre vos objectifs.
+          </p>
+
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              Branding & Identité
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              UI/UX Design
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              Génération d'idées par IA
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              Design System
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-primary CTA">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="text-white mb-6 md:mb-0">
+          <h2 class="text-3xl font-bold mb-2">
+            Vous êtes une entreprise, une organisation ou un entrepreneur ?
           </h2>
-          <p class="text-gray-600">
-            Nous collaborons avec des entreprises innovantes pour créer
-            l'excellence
+          <p class="text-white/90">
+            Parlons de votre projet et découvrons ensemble comment nous
+            pouvons vous accompagner dans votre transformation digitale.
           </p>
         </div>
-        <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-12">
-          <img src="img/sky.png" alt="Sky" class="h-12 w-auto object-contain" />
-          <img
-            src="img/senEdu.png"
-            alt="senEdu"
-            class="h-12 w-auto object-contain"
-          />
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button
+            class="bg-secondary text-white px-8 py-3 !rounded-button hover:bg-secondary/90 transition-colors whitespace-nowrap font-semibold">
+            Commencer
+          </button>
+          <button
+            class="border-2 border-white text-white px-8 py-3 !rounded-button hover:bg-white hover:text-primary transition-colors whitespace-nowrap">
+            Prendre un RDV
+          </button>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-primary text-white py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          class="grid md:grid-cols-4 gap-8 mb-12 bg-white/10 rounded-2xl p-6 md:p-8"
-        >
-          <div>
-            <div class="flex items-center mb-6">
-              <img
-                src="img/logo2.png"
-                alt="YAATAL Digital"
-                class="h-12 w-auto"
-              />
-            </div>
-            <p class="text-gray-400 leading-relaxed">
-              Votre partenaire digital pour transformer vos idées en solutions
-              innovantes et performantes.
-            </p>
+  <!-- Process Section -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-6xl font-bold text-primary tracking-tight inline-block relative z-0 mb-4">
+          Notre processus
+          <span class="absolute left-0 right-0 bottom-1 h-3 bg-secondary z-[-1]"></span>
+        </h2>
+        <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+          Une méthodologie agile pour des résultats concrets.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        <div class="relative bg-white rounded-2xl p-7 border border-gray-100">
+          <span class="absolute top-5 right-6 text-5xl font-black text-gray-200">01</span>
+          <div
+            class="w-12 h-12 rounded-full border-2 border-primary text-primary flex items-center justify-center mb-4">
+            <i class="ri-message-2-line text-xl"></i>
           </div>
-          <div>
-            <h3 class="font-bold text-lg mb-4">Liens Rapides</h3>
-            <div class="space-y-2 text-gray-400">
-              <a
-                href="index.html"
-                class="flex items-center gap-2 hover:text-white transition-colors"
-              >
-                <i class="ri-home-5-line text-secondary"></i>Accueil
-              </a>
-              <a
-                href="portfolio.html"
-                class="flex items-center gap-2 hover:text-white transition-colors"
-              >
-                <i class="ri-layout-grid-line text-secondary"></i>Portfolio
-              </a>
-              <a
-                href="contact.html"
-                class="flex items-center gap-2 hover:text-white transition-colors"
-              >
-                <i class="ri-customer-service-2-line text-secondary"></i>Contact
-              </a>
-              <a
-                href="services.html"
-                class="flex items-center gap-2 hover:text-white transition-colors"
-              >
-                <i class="ri-briefcase-4-line text-secondary"></i>Services
-              </a>
-            </div>
-          </div>
-          <div>
-            <h3 class="font-bold text-lg mb-4">Contact</h3>
-            <div class="space-y-3 text-gray-400">
-              <div class="flex items-center">
-                <i class="ri-map-pin-line mr-3 text-secondary"></i>
-                <span>Dakar, Sénégal</span>
-              </div>
-              <div class="flex items-center">
-                <i class="ri-phone-line mr-3 text-secondary"></i>
-                <span>+221 76 932 60 09</span>
-              </div>
-              <div class="flex items-center">
-                <i class="ri-mail-line mr-3 text-secondary"></i>
-                <span>yaataldesign@gmail.com</span>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h3 class="font-bold text-lg mb-4">Newsletter</h3>
-            <p class="text-gray-400 mb-4">
-              Restez informé de nos dernières actualités et innovations.
-            </p>
-            <div class="flex flex-col gap-3">
-              <input
-                type="email"
-                placeholder="Votre email"
-                class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-secondary"
-              />
-
-              <button
-                class="bg-secondary text-white py-2 rounded-button flex items-center justify-center gap-2 hover:opacity-90"
-              >
-                S'inscrire ?
-              </button>
-            </div>
+          <h3 class="text-3xl font-semibold text-primary mb-3">Brief et cadrage</h3>
+          <p class="text-gray-600 leading-relaxed">Nous analysons vos besoins, définissons la stratégie et les objectifs
+            du projet.</p>
+          <div class="hidden lg:flex absolute top-1/2 -right-7 -translate-y-1/2 items-center z-10">
+            <span class="w-7 h-px bg-primary"></span><i class="ri-arrow-right-line text-primary"></i>
           </div>
         </div>
-        <div
-          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"
-        >
-          <p class="text-gray-400 mb-4 md:mb-0">
-            Copyright © 2026 Yaatal Digital. Tous droits réservés.
+
+        <div class="relative bg-white rounded-2xl p-7 border border-gray-100">
+          <span class="absolute top-5 right-6 text-5xl font-black text-gray-200">02</span>
+          <div
+            class="w-12 h-12 rounded-full border-2 border-secondary text-secondary flex items-center justify-center mb-4">
+            <i class="ri-compass-3-line text-xl"></i>
+          </div>
+          <h3 class="text-3xl font-semibold text-[#c9960e] mb-3">Conception UI/UX</h3>
+          <p class="text-gray-600 leading-relaxed">Création des parcours utilisateurs et des maquettes graphiques haute
+            fidélité.</p>
+          <div class="hidden lg:flex absolute top-1/2 -right-7 -translate-y-1/2 items-center z-10">
+            <span class="w-7 h-px bg-green-600"></span><i class="ri-arrow-right-line text-green-600"></i>
+          </div>
+        </div>
+
+        <div class="relative bg-white rounded-2xl p-7 border border-gray-100">
+          <span class="absolute top-5 right-6 text-5xl font-black text-gray-200">03</span>
+          <div
+            class="w-12 h-12 rounded-full border-2 border-red-400 text-red-400 flex items-center justify-center mb-4">
+            <i class="ri-code-s-slash-line text-xl"></i>
+          </div>
+          <h3 class="text-3xl font-semibold text-red-400 mb-3">Développement</h3>
+          <p class="text-gray-600 leading-relaxed">Intégration technique robuste, tests et optimisation des
+            performances.</p>
+          <div class="hidden lg:flex absolute top-1/2 -right-7 -translate-y-1/2 items-center z-10">
+            <span class="w-7 h-px bg-primary"></span><i class="ri-arrow-right-line text-primary"></i>
+          </div>
+        </div>
+
+        <div class="relative bg-white rounded-2xl p-7 border border-gray-100">
+          <span class="absolute top-5 right-6 text-5xl font-black text-gray-200">04</span>
+          <div
+            class="w-12 h-12 rounded-full border-2 border-blue-600 text-blue-600 flex items-center justify-center mb-4">
+            <i class="ri-rocket-2-line text-xl"></i>
+          </div>
+          <h3 class="text-3xl font-semibold text-blue-600 mb-3">Lancement</h3>
+          <p class="text-gray-600 leading-relaxed">Mise en ligne, formation de vos équipes et suivi post-lancement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-[#f3f4f6]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-6xl font-bold text-primary tracking-tight inline-block relative z-0 mb-4">
+          Ce qu'ils disent de nous
+          <span class="absolute left-0 right-0 bottom-1 h-3 bg-secondary z-[-1]"></span>
+        </h2>
+        <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+          Ils témoignent de l'impact de nos solutions : innovation, fiabilité
+          et performance au coeur de chaque projet.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <article class="bg-white rounded-2xl p-6 shadow-sm">
+          <div class="flex gap-4">
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="Jean Paul FAYE" class="w-16 h-16 rounded-full object-cover border-4 border-secondary" />
+            <div class="flex-1">
+              <i class="ri-double-quotes-l text-4xl leading-none text-primary"></i>
+              <p class="text-sm text-gray-600 leading-relaxed mt-2">
+                Yaatal Design a été un véritable catalyseur pour le
+                développement de notre startup. Grâce à leurs ressources et à
+                leur soutien, nous avons pu accéder à des mentors
+                expérimentés.
+              </p>
+              <h4 class="mt-3 text-xl font-bold text-primary">
+                Jean Paul FAYE
+              </h4>
+              <p class="text-gray-500">DG de Tech Innovate</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-2xl p-6 shadow-sm">
+          <div class="flex gap-4">
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="Ornella Marie Bah" class="w-16 h-16 rounded-full object-cover border-4 border-secondary" />
+            <div class="flex-1">
+              <i class="ri-double-quotes-l text-4xl leading-none text-primary"></i>
+              <p class="text-sm text-gray-600 leading-relaxed mt-2">
+                Les programmes de formation proposés par Yaatal Design ont été
+                essentiels pour notre croissance. Les ateliers pratiques nous
+                ont permis d'acquérir des compétences cruciales.
+              </p>
+              <h4 class="mt-3 text-xl font-bold text-primary">
+                Ornella Marie Bah
+              </h4>
+              <p class="text-gray-500">CEO de Green solution</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="flex justify-center gap-3 mt-8">
+        <span class="w-2.5 h-2.5 rounded-full bg-primary/30"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-6xl font-bold text-primary tracking-tight inline-block relative z-0 mb-4">
+          Nos partenaires
+          <span class="absolute left-0 right-0 bottom-1 h-3 bg-secondary z-[-1]"></span>
+        </h2>
+        <p class="text-gray-600">
+          Nous collaborons avec des entreprises innovantes pour créer
+          l'excellence
+        </p>
+      </div>
+      <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-12">
+        <img src="img/sky.png" alt="Sky" class="h-12 w-auto object-contain" />
+        <img src="img/senEdu.png" alt="senEdu" class="h-12 w-auto object-contain" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-12 bg-white/10 rounded-2xl p-6 md:p-8">
+        <div>
+          <div class="flex items-center mb-6">
+            <img src="img/logo2.png" alt="YAATAL Digital" class="h-12 w-auto" />
+          </div>
+          <p class="text-gray-400 leading-relaxed">
+            Votre partenaire digital pour transformer vos idées en solutions
+            innovantes et performantes.
           </p>
-          <div class="flex space-x-4">
-            <a
-              href="#"
-              class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-            >
-              <i class="ri-facebook-line"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-4">Liens Rapides</h3>
+          <div class="space-y-2 text-gray-400">
+            <a href="index.html" class="flex items-center gap-2 hover:text-white transition-colors">
+              <i class="ri-home-5-line text-secondary"></i>Accueil
             </a>
-            <a
-              href="#"
-              class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-            >
-              <i class="ri-twitter-line"></i>
+            <a href="portfolio.html" class="flex items-center gap-2 hover:text-white transition-colors">
+              <i class="ri-layout-grid-line text-secondary"></i>Portfolio
             </a>
-            <a
-              href="#"
-              class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-            >
-              <i class="ri-linkedin-line"></i>
+            <a href="contact.html" class="flex items-center gap-2 hover:text-white transition-colors">
+              <i class="ri-customer-service-2-line text-secondary"></i>Contact
+            </a>
+            <a href="services.html" class="flex items-center gap-2 hover:text-white transition-colors">
+              <i class="ri-briefcase-4-line text-secondary"></i>Services
             </a>
           </div>
         </div>
-      </div>
-    </footer>
-    <script>
-      const tabletMenuToggle = document.getElementById("tablet-menu-toggle");
-      const tabletMenu = document.getElementById("tablet-menu");
+        <div>
+          <h3 class="font-bold text-lg mb-4">Contact</h3>
+          <div class="space-y-3 text-gray-400">
+            <div class="flex items-center">
+              <i class="ri-map-pin-line mr-3 text-secondary"></i>
+              <span>Dakar, Sénégal</span>
+            </div>
+            <div class="flex items-center">
+              <i class="ri-phone-line mr-3 text-secondary"></i>
+              <span>+221 76 932 60 09</span>
+            </div>
+            <div class="flex items-center">
+              <i class="ri-mail-line mr-3 text-secondary"></i>
+              <span>yaataldesign@gmail.com</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-4">Newsletter</h3>
+          <p class="text-gray-400 mb-4">
+            Restez informé de nos dernières actualités et innovations.
+          </p>
+          <div class="flex flex-col gap-3">
+            <input type="email" placeholder="Votre email"
+              class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-secondary" />
 
-      tabletMenuToggle?.addEventListener("click", () => {
-        const isOpen = !tabletMenu.classList.contains("hidden");
-        tabletMenu.classList.toggle("hidden");
-        tabletMenuToggle.setAttribute("aria-expanded", String(!isOpen));
-      });
-    </script>
-  </body>
+            <button
+              class="bg-secondary text-white py-2 rounded-button flex items-center justify-center gap-2 hover:opacity-90">
+              S'inscrire ?
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 mb-4 md:mb-0">
+          Copyright © 2026 Yaatal Digital. Tous droits réservés.
+        </p>
+        <div class="flex space-x-4">
+          <a href="#"
+            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+            <i class="ri-facebook-line"></i>
+          </a>
+          <a href="#"
+            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+            <i class="ri-twitter-line"></i>
+          </a>
+          <a href="#"
+            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+            <i class="ri-linkedin-line"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const tabletMenuToggle = document.getElementById("tablet-menu-toggle");
+    const tabletMenu = document.getElementById("tablet-menu");
+
+    tabletMenuToggle?.addEventListener("click", () => {
+      const isOpen = !tabletMenu.classList.contains("hidden");
+      tabletMenu.classList.toggle("hidden");
+      tabletMenuToggle.setAttribute("aria-expanded", String(!isOpen));
+    });
+  </script>
+</body>
+
 </html>
-
-
-
